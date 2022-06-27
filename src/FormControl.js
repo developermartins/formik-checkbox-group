@@ -1,11 +1,12 @@
+import CheckboxGroup from './CheckboxGroup';
+
 const FormControl = (props) => {
   const { control, ...rest } = props;
 
   switch (control) {
-    case value:
-      
-      break;
-  
+    case 'checkbox':
+      return <CheckboxGroup {...rest} />
+
     default:
       return null;
   };
