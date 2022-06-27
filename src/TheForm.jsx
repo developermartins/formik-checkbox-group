@@ -13,11 +13,33 @@ const TheForm = () => {
   ]
 
   const initialValues = {
-    
+    checkboxOptions: [],
   }
 
+  const validationSchema = Yup.object({
+    checkboxOptions: Yup.array().required('Required')
+  });
+
   return (
-    <div>Form</div>
+    <div>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+      >
+        {formik => (
+          <Form>
+            <FormControl 
+              control='checkbox'
+              label='Checkbox topics'
+              name='checkboxOption'
+              options={checkboxOptions}
+            />
+            <button type='submit'>Submit</button>
+          </Form>
+        )}
+      </Formik>
+    </div>
   );
 };
 
