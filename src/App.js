@@ -1,5 +1,5 @@
 import React from 'react';
-import TheForm from './Form';
+import TheForm from './TheForm';
 
 const App = () => {
   return (
